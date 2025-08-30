@@ -19,7 +19,7 @@
     "execa": "^9.6.0"
   },
   "devDependencies": {
-    "@types/react": "^19.1.10",
+    "@types/react": "^19.1.11",
     "typescript": "^5.9.2"
   },
   "commands": [
@@ -29,13 +29,6 @@
       "description": "Process dates and times using natural language.",
       "mode": "view",
       "icon": "extension-icon.png"
-    },
-    {
-      "name": "orbstack",
-      "title": "OrbStack Data Location",
-      "description": "Show the current OrbStack data location in the menu bar.",
-      "mode": "menu-bar",
-      "interval": "10s"
     },
     {
       "name": "network",
