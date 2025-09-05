@@ -2,6 +2,7 @@
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "wingman",
   "title": "Wingman",
+  "type": "module",
   "description": "An assortment of useful utility and menu bar commands.",
   "author": "Boboon",
   "license": "MIT",
@@ -19,6 +20,9 @@
     "execa": "^9.6.0"
   },
   "devDependencies": {
+    "@tsconfig/node-ts": "^23.6.1",
+    "@tsconfig/node24": "^24.0.1",
+    "@tsconfig/recommended": "^1.0.10",
     "@types/react": "^19.1.12",
     "typescript": "^5.9.2"
   },

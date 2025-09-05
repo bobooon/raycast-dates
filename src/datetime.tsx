@@ -1,11 +1,11 @@
 import { Action, ActionPanel, Color, List } from '@raycast/api'
 import { parseDate } from 'chrono-node'
 import dayjs from 'dayjs'
-import advancedFormatPlugin from 'dayjs/plugin/advancedFormat'
-import relativeTimePlugin from 'dayjs/plugin/relativeTime'
-import timezonePlugin from 'dayjs/plugin/timezone'
-import utcPlugin from 'dayjs/plugin/utc'
-import weekOfYearPlugin from 'dayjs/plugin/weekOfYear'
+import advancedFormatPlugin from 'dayjs/plugin/advancedFormat.js'
+import relativeTimePlugin from 'dayjs/plugin/relativeTime.js'
+import timezonePlugin from 'dayjs/plugin/timezone.js'
+import utcPlugin from 'dayjs/plugin/utc.js'
+import weekOfYearPlugin from 'dayjs/plugin/weekOfYear.js'
 import { useState } from 'react'
 
 dayjs.extend(advancedFormatPlugin)

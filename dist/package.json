@@ -19,6 +19,9 @@
     "execa": "^9.6.0"
   },
   "devDependencies": {
+    "@tsconfig/node-ts": "^23.6.1",
+    "@tsconfig/node24": "^24.0.1",
+    "@tsconfig/recommended": "^1.0.10",
     "@types/react": "^19.1.12",
     "typescript": "^5.9.2"
   },
