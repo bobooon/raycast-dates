@@ -12,14 +12,14 @@
     "sync": "rsync -rti ~/.config/raycast/extensions/wingman/ dist"
   },
   "dependencies": {
-    "@raycast/api": "^1.102.5",
+    "@raycast/api": "^1.102.6",
     "@raycast/utils": "^2.2.1",
     "chrono-node": "^2.8.4",
-    "dayjs": "^1.11.13",
+    "dayjs": "^1.11.18",
     "execa": "^9.6.0"
   },
   "devDependencies": {
-    "@types/react": "^19.1.11",
+    "@types/react": "^19.1.12",
     "typescript": "^5.9.2"
   },
   "commands": [
