@@ -14,7 +14,7 @@
   "dependencies": {
     "@raycast/api": "^1.103.2",
     "@raycast/utils": "^2.2.1",
-    "chrono-node": "^2.8.4",
+    "chrono-node": "^2.9.0",
     "dayjs": "^1.11.18",
     "execa": "^9.6.0"
   },
@@ -22,7 +22,7 @@
     "@tsconfig/node-ts": "^23.6.1",
     "@tsconfig/node24": "^24.0.1",
     "@tsconfig/recommended": "^1.0.10",
-    "@types/react": "^19.1.13",
+    "@types/react": "^19.1.15",
     "typescript": "^5.9.2"
   },
   "commands": [
