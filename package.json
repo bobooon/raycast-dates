@@ -13,7 +13,7 @@
     "sync": "rsync -rti ~/.config/raycast/extensions/wingman/ dist"
   },
   "dependencies": {
-    "@raycast/api": "^1.103.3",
+    "@raycast/api": "^1.103.4",
     "@raycast/utils": "^2.2.1",
     "chrono-node": "^2.9.0",
     "dayjs": "^1.11.18",
