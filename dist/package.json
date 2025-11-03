@@ -1,44 +1,36 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
-  "name": "wingman",
-  "title": "Wingman",
-  "description": "An assortment of useful utility and menu bar commands.",
+  "name": "dates",
+  "title": "Dates",
+  "description": "Use natural language to parse and manipulate dates.",
   "author": "Boboon",
   "license": "MIT",
   "icon": "extension-icon.png",
   "scripts": {
     "dev": "ray develop",
     "build": "ray build --output dist && npm run sync",
-    "sync": "rsync -rti ~/.config/raycast/extensions/wingman/ dist"
+    "sync": "rsync -rti ~/.config/raycast/extensions/dates/ dist"
   },
   "dependencies": {
-    "@raycast/api": "^1.103.3",
-    "@raycast/utils": "^2.2.1",
+    "@raycast/api": "^1.103.6",
+    "@raycast/utils": "^2.2.2",
     "chrono-node": "^2.9.0",
-    "dayjs": "^1.11.18",
-    "execa": "^9.6.0"
+    "dayjs": "^1.11.19"
   },
   "devDependencies": {
     "@tsconfig/node-ts": "^23.6.1",
     "@tsconfig/node24": "^24.0.1",
-    "@tsconfig/recommended": "^1.0.10",
+    "@tsconfig/recommended": "^1.0.11",
     "@types/react": "^19.2.2",
     "typescript": "^5.9.3"
   },
   "commands": [
     {
-      "name": "datetime",
-      "title": "Date & Time",
-      "description": "Process dates and times using natural language.",
+      "name": "format",
+      "title": "Format Date & Time",
+      "description": "Format date and time using natural language.",
       "mode": "view",
       "icon": "extension-icon.png"
-    },
-    {
-      "name": "network",
-      "title": "Network Location",
-      "description": "Show the current network location in the menu bar.",
-      "mode": "menu-bar",
-      "interval": "10s"
     }
   ]
 }

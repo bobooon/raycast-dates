@@ -37,7 +37,7 @@ function handleConversion(input: string, timezone: string) {
   ]
 }
 
-export default function Datetime() {
+export default function Format() {
   const [input, setInput] = useState('now')
   const [timezone, setTimezone] = useState(Intl.DateTimeFormat().resolvedOptions().timeZone)
   const [items, setItems] = useState<{ label: string, value: string | number }[]>([])
