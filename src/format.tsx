@@ -6,7 +6,7 @@ import relativeTimePlugin from 'dayjs/plugin/relativeTime.js'
 import timezonePlugin from 'dayjs/plugin/timezone.js'
 import utcPlugin from 'dayjs/plugin/utc.js'
 import weekOfYearPlugin from 'dayjs/plugin/weekOfYear.js'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 
 dayjs.extend(advancedFormatPlugin)
 dayjs.extend(weekOfYearPlugin)
@@ -14,43 +14,49 @@ dayjs.extend(utcPlugin)
 dayjs.extend(timezonePlugin)
 dayjs.extend(relativeTimePlugin)
 
-function handleConversion(input: string, timezone: string) {
-  if (input.match(/^\d+$/))
-    input = new Date(Number.parseInt(input, 10) * 1000).toString()
+const defaultTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone
 
-  const parsedDate = parseDate(input)
-  if (!parsedDate || parsedDate.toString() === 'Invalid Date')
+function process(input: string, timezone: string) {
+  if (input.match(/^\d+$/)) {
+    const timestamp = Number.parseInt(input, 10)
+    input = new Date(timestamp > 4102444800 ? timestamp : timestamp * 1000).toString()
+  }
+
+  const dateParsed = parseDate(input)
+  if (!dateParsed || dateParsed.toString() === 'Invalid Date')
     return []
 
-  const date = dayjs(parsedDate).tz(timezone)
-  const fromNow = date.fromNow()
+  const date = dayjs(dateParsed).tz(timezone)
+  const dateFrom = date.fromNow()
 
   return [
     { label: 'Unix (s)', value: date.unix() },
     { label: 'Unix (ms)', value: date.valueOf() },
     { label: 'Human Readable', value: date.format('MMMM Do, YYYY [at] hh:mm:ss A (zzz)') },
     { label: 'DateTime', value: date.format('YYYY-MM-DD HH:mm:ss') },
-    { label: 'UTC', value: date.toString() },
+    { label: 'String', value: date.toString() },
     { label: 'ISO 8601', value: date.toISOString() },
     { label: 'Week of Year', value: date.format('wo dddd [of] YYYY') },
-    { label: 'In / Ago', value: String(fromNow).charAt(0).toUpperCase() + String(fromNow).slice(1) },
+    { label: 'In / Ago', value: dateFrom.charAt(0).toUpperCase() + dateFrom.slice(1) },
   ]
 }
 
 export default function Format() {
   const [input, setInput] = useState('now')
-  const [timezone, setTimezone] = useState(Intl.DateTimeFormat().resolvedOptions().timeZone)
+  const [timezone, setTimezone] = useState(defaultTimezone)
   const [items, setItems] = useState<{ label: string, value: string | number }[]>([])
 
-  const onTimezoneChange = async (value: string) => {
+  const onTimezoneChange = (value: string) => {
     setTimezone(value)
-    setItems(handleConversion(input, value))
+    setItems(process(input, value))
   }
 
-  const onSearchTextChange = async (value: string) => {
+  const onSearchTextChange = (value: string) => {
     setInput(value)
-    setItems(handleConversion(value, timezone))
+    setItems(process(value, timezone))
   }
+
+  const timezones = useMemo(() => Intl.supportedValuesOf('timeZone'), [])
 
   return (
     <List
@@ -60,7 +66,7 @@ export default function Format() {
       onSearchTextChange={onSearchTextChange}
       searchBarAccessory={(
         <List.Dropdown tooltip="Timezone" onChange={onTimezoneChange} defaultValue={timezone}>
-          {Intl.supportedValuesOf('timeZone').map(zone => (
+          {timezones.map(zone => (
             <List.Dropdown.Item key={zone} value={zone} title={zone} />
           ))}
         </List.Dropdown>
@@ -68,13 +74,13 @@ export default function Format() {
     >
       {items.map(item => (
         <List.Item
-          key={item.value}
+          key={item.label}
           title={String(item.value)}
           accessories={[{ tag: { value: item.label, color: Color.SecondaryText } }]}
           actions={(
             <ActionPanel>
-              <Action.CopyToClipboard content={item.value} />
-              <Action.Paste content={item.value} />
+              <Action.CopyToClipboard content={String(item.value)} />
+              <Action.Paste content={String(item.value)} />
             </ActionPanel>
           )}
         />
