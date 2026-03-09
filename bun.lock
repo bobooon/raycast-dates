@@ -5,7 +5,7 @@
     "": {
       "name": "dates",
       "dependencies": {
-        "@raycast/api": "^1.104.6",
+        "@raycast/api": "^1.104.8",
         "@raycast/utils": "^2.2.2",
         "chrono-node": "^2.9.0",
         "dayjs": "^1.11.19",
@@ -114,7 +114,7 @@
 
     "@raycast/api": ["@raycast/api@1.104.8", "", { "dependencies": { "@oclif/core": "^4.5.4", "@oclif/plugin-autocomplete": "^3.2.35", "@oclif/plugin-help": "^6.2.33", "@oclif/plugin-not-found": "^3.2.68", "@types/node": "22.13.10", "@types/react": "19.0.10", "esbuild": "^0.25.10", "react": "19.0.0" }, "peerDependencies": { "react-devtools": "6.1.1" }, "optionalPeers": ["react-devtools"], "bin": { "ray": "bin/run.js" } }, "sha512-wjN0o4JdEZOIaYtf4Pe9Lb44SEKxS6QT06YIBOqllmuMXOkMvtJao6kmAw0ph/DXqEyGZisb0ViOpm/Or6DL2w=="],
 
-    "@raycast/utils": ["@raycast/utils@2.2.2", "", { "dependencies": { "dequal": "^2.0.3" }, "peerDependencies": { "@raycast/api": ">=1.99.4", "react": ">=19.0.0" }, "optionalPeers": ["react"] }, "sha512-tZcyWCHZvz4L/i1CGEnSZkBoK6wwX1pzlTKjcWWugbrQyG0QCMOxjKJfRC/iNkD+hHaqhMWUj4Y0LNo/NknvFw=="],
+    "@raycast/utils": ["@raycast/utils@2.2.3", "", { "dependencies": { "dequal": "^2.0.3" }, "peerDependencies": { "@raycast/api": ">=1.99.4", "react": ">=19.0.0" }, "optionalPeers": ["react"] }, "sha512-YwqleVl0Wk/FOq+672gtvswuwMqjNqIr+c63FhouTEHc1LJ3zaohLSkW4+UcfBjPU8HySKQm+kJqZW1iOM9fnA=="],
 
     "@tsconfig/node-ts": ["@tsconfig/node-ts@23.6.4", "", {}, "sha512-37BMJvNQZ+vTgd1xG2TGBkJ6ENeT4eO4Wh2CHrnn0IwH7ybLFCzh4Uc//kc7UIvqiRac4uGdIc1meKOjMSlKzw=="],
 

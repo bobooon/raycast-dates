@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@raycast/api": "^1.104.8",
-    "@raycast/utils": "^2.2.2",
+    "@raycast/utils": "^2.2.3",
     "chrono-node": "^2.9.0",
     "dayjs": "^1.11.19"
   },
